@@ -21,7 +21,7 @@ module OmniAuth
 
       def token_params
         super.tap do |params|
-          params[:headers] = {'Authorization' => "Basic #{Base64.strict_encode64("#{client_id}:#{client_secret}")}"}
+          params[:headers] = {'Authorization' => "Basic #{Base64.strict_encode64("#{options.client_id}:#{options.client_secret}")}"}
         end
       end
 
